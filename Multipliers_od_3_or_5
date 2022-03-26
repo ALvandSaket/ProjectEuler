@@ -1,0 +1,17 @@
+nums = []
+
+x = 1
+
+while x < 1000 :
+    if x % 3 == 0 :
+        nums.append(x)
+    elif x % 5 == 0 :
+        nums.append(x)
+    x += 1
+
+total = 0
+
+for num in nums :
+    total += num
+
+print (total)
