@@ -1,0 +1,27 @@
+my_list = [1, 2]
+
+
+def give_nex(l):
+    nex = l[-1] + l[-2]
+    l.append(nex)
+    l.sort()
+    print(l)
+    return nex
+
+
+even_ones = []
+
+big = 0
+
+while big < 4000000:
+    big = give_nex(my_list)
+my_list.pop()
+
+for i in my_list:
+    if i % 2 == 0:
+        even_ones.append(i)
+
+total = 0
+for i in even_ones:
+    total += i
+print(total)
