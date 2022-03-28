@@ -1,0 +1,27 @@
+
+
+def check_if_palindrome(n):
+    n = str(n)
+    nums_len = len(str(n))
+    if nums_len % 2 == 0:
+        firs_half = n[:int(nums_len/2)]
+        second_half = n[nums_len:int(nums_len/2)-1:-1]
+
+        if firs_half == second_half:
+            return True
+        return False
+    return False
+
+
+the_lis = []
+
+for x in reversed(range(100, 1000)):
+    for y in reversed(range(100, 1000)):
+        if check_if_palindrome(x * y):
+            the_lis.append(x*y)
+        y += -1
+    x += -1
+
+the_lis.sort()
+
+print(the_lis[-1])
