@@ -1,0 +1,11 @@
+squ_sums = 0
+sum_squs = 0
+for i in range(1, 101):
+    squ_sums += i*i
+
+for i in range(1, 101):
+    sum_squs += i
+
+ans = sum_squs*sum_squs - squ_sums
+
+print(ans)
