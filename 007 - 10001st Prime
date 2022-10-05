@@ -1,7 +1,6 @@
 
-
 def if_prime(i) :
-    for x in range (2, i) :
+    for x in range (2, int((i/2)+1)) :
         if i % x == 0 :
             return False
     return True
@@ -12,9 +11,7 @@ i = 2
 while True:
     if if_prime(i) :
         le_list.append(i)
-        i += 1
-    else:
-        i += 1
+    i += 1
     
     if len(le_list) == 10001 :
         print(i-1)

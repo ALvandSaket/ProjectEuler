@@ -1,10 +1,10 @@
 t = 1
 
-shet = True
-while shet:
+go_on = True
+while go_on:
     for i in range(1, 20):
         if t % i != 0:
             t += 1
-            shet = True
+            go_on = True
             continue
     print(t)
