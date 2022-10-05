@@ -19,7 +19,7 @@ eighteen = '20 69 36 41 72 30 23 88 34 62 99 69 82 67 59 85 74 04 36 16'
 nineteen = '20 73 35 29 78 31 90 01 74 31 49 71 48 86 81 16 23 57 05 54'
 twenty = '01 70 54 71 83 51 54 69 16 92 33 48 61 43 52 01 89 19 67 48'
 
-le_list = {one, two, three, four, five, six, seven, eight, nine, ten, eleven, twelve, thirteen, fourteen, fifteen, sixteen, seventeen, nineteen, twenty}
+le_list = [one, two, three, four, five, six, seven, eight, nine, ten, eleven, twelve, thirteen, fourteen, fifteen, sixteen, seventeen, eighteen, nineteen, twenty]
 
 les_lists = []
 for i in le_list :
@@ -29,6 +29,66 @@ for i in le_list :
         new_int.append(int(x))
     les_lists.append(new_int)
 
+# Horiz
+biggest_horiz = 0
+for x in range (0,20):
+    for y in range (0,17):
+        z1 = les_lists[x][y]
+        z2 = les_lists[x][y+1]
+        z3 = les_lists[x][y+2]
+        z4 = les_lists[x][y+3]
+        mul = z1 * z2 * z3 * z4
+        if  mul > biggest_horiz :
+            biggest_horiz = mul
+# print (biggest_horiz)
 
-for i in les_lists :
-    print(i)
+# Vertic
+biggest_ver = 0
+for x in range (0,17):
+    for y in range (0,20):
+        z1 = les_lists[x][y]
+        z2 = les_lists[x+1][y]
+        z3 = les_lists[x+2][y]
+        z4 = les_lists[x+3][y]
+        mul = z1 * z2 * z3 * z4
+        if  mul > biggest_ver :
+            biggest_ver = mul
+# print (biggest_ver)
+
+# Oblique
+
+biggest_obl_one = 0
+for x in range (0,17):
+    for y in range (0,17):
+        z1 = les_lists[x][y]
+        z2 = les_lists[x+1][y+1]
+        z3 = les_lists[x+2][y+2]
+        z4 = les_lists[x+3][y+3]
+        mul = z1 * z2 * z3 * z4
+        if  mul > biggest_obl_one :
+            biggest_obl_one = mul
+# print (biggest_obl_one)
+
+
+
+biggest_obl_two = 0
+for x in range (0,17):
+    for y in range (0,17):
+        z1 = les_lists[x][y+3]
+        z2 = les_lists[x+1][y+2]
+        z3 = les_lists[x+2][y+1]
+        z4 = les_lists[x+3][y]
+        mul = z1 * z2 * z3 * z4
+        # print(f"{x}-{y+3} , {x+1}-{y+2} , {x+2}-{y+1} , {x+3}-{y} = {mul}")
+        if  mul > biggest_obl_two :
+            biggest_obl_two = mul
+# print (biggest_obl_two)
+
+
+# print (biggest_horiz)
+# print (biggest_ver)
+# print (biggest_obl_one)
+# print (biggest_obl_two)
+
+gratest_list = [biggest_horiz, biggest_ver,biggest_obl_one,biggest_obl_two]
+print(max(gratest_list))
