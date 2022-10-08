@@ -1,7 +1,7 @@
 
 def check_if_right(x):
     factors = []
-    for i in range (1,x/2):
+    for i in range (1,int(x**(0.5))+1):
         if x % i == 0 :
             factors.append(i)
     # print (len(factors))
